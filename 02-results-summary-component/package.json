@@ -1,0 +1,23 @@
+{
+  "name": "results-summary-component",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "scripts": {
+    "watch": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "lint": "stylelint src/scss/**/*.scss",
+    "lint:fix": "stylelint --fix src/scss/**/*.scss"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3",
+    "sass": "^1.62.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "stylelint-order": "^6.0.3"
+  }
+}

@@ -1,0 +1,19 @@
+@use "../abstract" as *;
+
+.dual-card {
+  .card {
+    box-shadow: none;
+  }
+
+  @media (width >= 575px) {
+    display: grid;
+    max-width: 45rem;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 25px 50px $pale-blue;
+    font-weight: 500;
+    grid-template-columns: 1fr 1fr;
+
+    // background-color: red;
+  }
+}

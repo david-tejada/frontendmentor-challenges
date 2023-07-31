@@ -1,0 +1,21 @@
+// Primary
+$light-red-500: hsl(0deg 100% 67%);
+$light-red-100: hsla(0deg 100% 67% / 5%);
+$orangey-yellow-500: hsl(39deg 100% 56%);
+$orangey-yellow-100: hsla(39deg 100% 56% / 5%);
+$green-teal-500: hsl(166deg 100% 37%);
+$green-teal-100: hsla(166deg 100% 37% / 5%);
+$cobalt-blue-500: hsl(234deg 85% 45%);
+$cobalt-blue-100: hsla(234deg 85% 45% / 5%);
+
+// Neutral
+$pale-blue: hsl(221deg 100% 96%);
+$light-lavender: hsl(241deg 100% 89%);
+$dark-gray-blue: hsl(224deg 30% 27%);
+
+// Gradients
+$gradient-blue: linear-gradient(hsl(252deg 100% 67%), hsl(241deg 81% 54%));
+$gradient-dark-blue: linear-gradient(
+  hsla(256deg 72% 46% / 100%),
+  hsla(241deg 72% 46% / 0%)
+);

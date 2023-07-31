@@ -1,0 +1,73 @@
+@use "../abstract" as *;
+
+.card {
+  padding: 2.5rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: 0 25px 50px $pale-blue;
+
+  & .label {
+    display: flex;
+
+    img {
+      margin-right: 0.5em;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 1.5rem;
+    font-size: rem(24px);
+    font-weight: 500;
+  }
+
+  &__highlight {
+    margin-top: 2rem;
+    margin-bottom: 0.6em;
+    font-size: rem(32px);
+  }
+
+  &__paragraph {
+    color: $light-lavender;
+    line-height: 1.4;
+  }
+
+  &__score {
+    display: flex;
+    width: 12rem;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 100%;
+    margin: 0 auto;
+    aspect-ratio: 1/1;
+    background: $gradient-dark-blue;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  &__max-score {
+    color: $light-lavender;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  &--dark {
+    background: $gradient-blue;
+    color: white;
+    text-align: center;
+
+    .card__heading {
+      color: $light-lavender;
+    }
+  }
+
+  &--light {
+    .card__heading {
+      color: $dark-gray-blue;
+    }
+  }
+
+  @media (min-width: $breakpoint-small) {
+    border-radius: 2rem;
+  }
+}

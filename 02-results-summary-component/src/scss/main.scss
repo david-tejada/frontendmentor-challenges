@@ -1,0 +1,33 @@
+@use "abstract" as *;
+@use "components";
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-weight: 500 800;
+  src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100svh;
+  background-color: hsla(221deg 100% 96% / 10%);
+  font-family: "Hanken Grotesk";
+  font-size: rem(18px);
+  font-weight: 500;
+
+  @media (min-width: $breakpoint-small) {
+    place-items: center;
+  }
+}
+
+.result-list {
+  padding: 0;
+  list-style: none;
+}
+
+footer {
+  text-align: center;
+  font-size: clamp(0.9rem, calc(0.69rem + 0.32vw), 0.94rem);
+  padding: 1em;
+}

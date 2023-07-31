@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="scss/main.scss" type="text/css" />
+
+    <title>Frontend Mentor | Results summary component</title>
+  </head>
+  <body>
+    <main>
+      <div class="dual-card">
+        <div class="card card--dark">
+          <h1 class="card__heading">Your Result</h1>
+          <p class="card__score">
+            76 <span class="card__max-score">of 100</span>
+          </p>
+          <p class="card__highlight">Great</p>
+          <p class="card__paragraph">
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+        <div class="card card--light">
+          <h2 class="card__heading">Summary</h2>
+          <ul class="result-list">
+            <li class="stat stat--reaction">
+              <span class="label">Reaction</span>
+              <span class="stat__score"
+                >80 <span class="stat__max-score">/ 100</span></span
+              >
+            </li>
+            <li class="stat stat--memory">
+              <span class="label">Memory</span>
+              <span class="stat__score"
+                >92 <span class="stat__max-score">/ 100</span></span
+              >
+            </li>
+            <li class="stat stat--verbal">
+              <span class="label">Verbal</span>
+              <span class="stat__score"
+                >61 <span class="stat__max-score">/ 100</span></span
+              >
+            </li>
+            <li class="stat stat--visual">
+              <span class="label">Visual</span>
+              <span class="stat__score"
+                >72 <span class="stat__max-score">/ 100</span></span
+              >
+            </li>
+          </ul>
+
+          <button class="button">Continue</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/david-tejada/">David Tejada</a>.
+      </div>
+    </footer>
+  </body>
+</html>
