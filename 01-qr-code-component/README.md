@@ -21,7 +21,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-- Solution URL: [david-tejada/frontendmentor-qr-code-component](https://github.com/david-tejada/frontendmentor-qr-code-component)
+- Solution URL: [frontendmentor-challenges/01-qr-code-component](https://github.com/david-tejada/frontendmentor-challenges/tree/main/01-qr-code-component)
 - Live Site URL: [Frontend Mentor | QR code component](https://heroic-cannoli-22f3be.netlify.app/)
 
 ## My process
