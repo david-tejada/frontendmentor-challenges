@@ -1,0 +1,129 @@
+@use "abstract" as *;
+
+body {
+  display: grid;
+  min-height: 100svh;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: rem(15px);
+  font-weight: 400;
+  grid-template-rows: 1fr auto;
+
+  @media (min-width: $breakpoint-small) {
+    place-items: center;
+  }
+}
+
+main {
+  display: grid;
+  align-content: start;
+  justify-content: center;
+  margin: 1rem;
+
+  @media (min-width: $breakpoint-small) {
+    display: flex;
+    flex: 1 1 0px;
+    margin: 0 1rem;
+  }
+}
+
+.card {
+  display: flex;
+  max-width: 30rem;
+  flex-direction: column;
+  padding: 7rem 3rem 3rem;
+  background-position: 3rem 3rem;
+  background-repeat: no-repeat;
+  background-size: 4rem;
+  color: $transparent-white;
+
+  @media (min-width: $breakpoint-small) {
+    max-width: 19rem;
+  }
+
+  &:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    @media (min-width: $breakpoint-small) {
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+  }
+
+  &:last-child {
+    border-radius: 0 0 0.5rem 0.5rem;
+
+    @media (min-width: $breakpoint-small) {
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+  }
+
+  .card__heading {
+    color: $very-light-gray;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+
+    @media (min-width: $breakpoint-small) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  button {
+    align-self: start;
+    padding: 0.8rem 2rem;
+    border: 1px solid;
+    border-radius: 999px;
+    margin-top: auto;
+    background-color: $very-light-gray;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      border: 1px solid;
+      background-color: transparent;
+      color: $transparent-white;
+    }
+  }
+}
+
+.card--sedans {
+  background-color: $bright-orange;
+  background-image: url("../images/icon-sedans.svg");
+
+  button {
+    color: $bright-orange;
+  }
+}
+
+.card--suvs {
+  background-color: $dark-cyan;
+  background-image: url("../images/icon-suvs.svg");
+
+  button {
+    color: $dark-cyan;
+  }
+}
+
+.card--luxury {
+  background-color: $very-dark-cyan;
+  background-image: url("../images/icon-luxury.svg");
+
+  button {
+    color: $very-dark-cyan;
+  }
+}
+
+.card__heading {
+  margin-bottom: 1rem;
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+footer {
+  padding: 1em;
+  font-size: clamp(0.9rem, calc(0.69rem + 0.32vw), 0.94rem);
+  text-align: center;
+}
