@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/02-results-summary-component](https://github.com/david-tejada/frontendmentor-challenges/tree/main/02-results-summary-component)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | Results summary component](https://melodious-moonbeam-0b5abb.netlify.app/)
 
 ## My process
 
