@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/04-product-preview-card-component](https://github.com/david-tejada/04-product-preview-card-component)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | Product preview card component](https://cerulean-croquembouche-7afd86.netlify.app/)
 
 ## My process
 
