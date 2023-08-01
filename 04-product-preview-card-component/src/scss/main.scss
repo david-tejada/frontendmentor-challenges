@@ -1,0 +1,94 @@
+@use "abstract" as *;
+
+body {
+  display: grid;
+  min-height: 100svh;
+  font-family: $ff-default;
+  font-size: rem(14px);
+  font-weight: 500;
+  line-height: 1.7;
+  grid-template-rows: 1fr auto;
+  background-color: $cream;
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  background-color: $white;
+  color: $dark-grayish-blue;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  overflow: hidden;
+
+  @media (min-width: $breakpoint-small) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: rem(600px);
+  }
+
+  &__info {
+    display: grid;
+    gap: 1rem;
+    padding: 1.8rem;
+  }
+
+  &__category {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+
+  &__heading {
+    font-family: $ff-fancy;
+    font-weight: 700;
+    color: $very-dark-blue;
+    font-size: rem(32px);
+    line-height: 1;
+  }
+
+  &__price {
+    color: $dark-cyan;
+    font-family: $ff-fancy;
+    font-size: rem(32px);
+    font-weight: 700;
+  }
+}
+
+.button {
+  display: inline-flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-cyan;
+  border: 0;
+  border-radius: 0.3rem;
+  padding: 0.75em 1.5em;
+  color: $white;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $darker-cyan;
+  }
+}
+
+[data-icon="cart"]::before {
+  content: "";
+  width: 15px;
+  height: 16px;
+  background-image: url("../images/icon-cart.svg");
+}
+
+.flex-group {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+footer {
+  padding: 1em;
+  font-size: clamp(0.9rem, calc(0.69rem + 0.32vw), 0.94rem);
+  text-align: center;
+}
