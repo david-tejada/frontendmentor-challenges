@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/05-stats-preview-card-component](https://github.com/david-tejada/05-stats-preview-card-component)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | Stats preview card component](https://brilliant-clafoutis-48bcff.netlify.app/)
 
 ## My process
 
