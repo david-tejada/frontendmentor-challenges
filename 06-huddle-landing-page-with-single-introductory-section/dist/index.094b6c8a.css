@@ -1,0 +1,136 @@
+:root {
+  --color-primary: #674baf;
+  --color-secondary: #e882e8;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  background-image: url("bg-mobile.73b1aa13.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 2.5rem;
+  font-family: Open Sans, sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  gap: 2rem;
+  max-width: 60rem;
+  min-height: 90svh;
+  margin-inline: auto;
+  display: grid;
+}
+
+main {
+  gap: 2rem;
+  display: grid;
+}
+
+.logo {
+  width: 10rem;
+}
+
+.mockups {
+  margin-inline: auto;
+}
+
+.hero {
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+  font-family: Poppins, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.button-cta {
+  cursor: pointer;
+  color: var(--color-primary);
+  background-color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: .75em 5em;
+  font-family: Poppins, sans-serif;
+  font-size: .875rem;
+  font-weight: 400;
+  box-shadow: 3px 3px 10px #0006;
+}
+
+.button-cta:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.social-links {
+  justify-content: center;
+  gap: .75rem;
+  display: flex;
+}
+
+.social-links a {
+  color: #fff;
+  border: 1px solid;
+  border-radius: 50%;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  display: grid;
+}
+
+.social-links a:hover {
+  color: var(--color-secondary);
+}
+
+@media (width >= 1140px) {
+  body {
+    background-image: url("bg-desktop.2cb6d126.svg");
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .container {
+    grid-template-rows: auto 1fr auto;
+    max-width: 90rem;
+    display: grid;
+  }
+
+  .intro {
+    max-width: 50ch;
+  }
+
+  main {
+    margin-inline: auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 0;
+    display: grid;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .social-links {
+    justify-content: end;
+  }
+}
+
+/*# sourceMappingURL=index.094b6c8a.css.map */

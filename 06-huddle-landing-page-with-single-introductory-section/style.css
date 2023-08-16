@@ -1,0 +1,134 @@
+:root {
+  --color-primary: hsl(257, 40%, 49%);
+  --color-secondary: hsl(300, 69%, 71%);
+}
+
+body {
+  padding: 2.5rem;
+  background-color: var(--color-primary);
+  background-image: url("images/bg-mobile.svg");
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 60rem;
+  min-height: 90svh;
+  display: grid;
+  gap: 2rem;
+}
+
+main {
+  display: grid;
+  gap: 2rem;
+}
+
+.logo {
+  width: 10rem;
+}
+
+.mockups {
+  margin-inline: auto;
+}
+
+.hero {
+  margin-inline: auto;
+  max-width: 60ch;
+}
+
+.hero h1 {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.button-cta {
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  padding: 0.75em 5em;
+  color: var(--color-primary);
+  border: 0;
+  border-radius: 999px;
+  background-color: white;
+  font-size: 0.875rem;
+  font-weight: 400;
+  box-shadow: 3px 3px 10px hsl(0 0% 0% / 0.4);
+}
+
+.button-cta:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.social-links a:hover {
+  color: var(--color-secondary);
+}
+
+@media (min-width: 1140px) {
+  body {
+    background-image: url("images/bg-desktop.svg");
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    max-width: 90rem;
+  }
+
+  .intro {
+    max-width: 50ch;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-inline: auto;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 0;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .social-links {
+    justify-content: end;
+  }
+}
