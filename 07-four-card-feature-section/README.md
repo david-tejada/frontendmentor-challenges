@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/07-four-card-feature-section](https://github.com/david-tejada/07-four-card-feature-section)
-- Live Site URL: [Four card feature section](https://lustrous-salamander-bf2556.netlify.com)
+- Live Site URL: [Four card feature section](https://lustrous-salamander-bf2556-.netlify.com)
 
 ## My process
 
@@ -36,9 +36,5 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
