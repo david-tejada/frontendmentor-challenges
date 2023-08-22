@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [frontendmentor-challenges/07-four-card-feature-section](https://github.com/david-tejada/07-four-card-feature-section)
+- Solution URL: [frontendmentor-challenges/07-four-card-feature-section](https://github.com/david-tejada/frontendmentor-challenges/tree/main/07-four-card-feature-section)
 - Live Site URL: [Four card feature section](https://lustrous-salamander-bf2556-.netlify.com)
 
 ## My process
