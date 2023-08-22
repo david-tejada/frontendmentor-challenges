@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [frontendmentor-challenges/03-three-column-preview-card-component](https://github.com/david-tejada/03-three-column-preview-card-component)
+- Solution URL: [frontendmentor-challenges/03-three-column-preview-card-component](https://github.com/david-tejada/frontendmentor-challenges/tree/main/03-three-column-preview-card-component)
 - Live Site URL: [Frontend Mentor | 3-column preview card component](https://aquamarine-kitten-db0203.netlify.app/)
 
 ## My process

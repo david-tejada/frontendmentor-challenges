@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [frontendmentor-challenges/06-huddle-landing-page-with-single-introductory-section](https://github.com/david-tejada/06-huddle-landing-page-with-single-introductory-section)
+- Solution URL: [frontendmentor-challenges/06-huddle-landing-page-with-single-introductory-section](https://github.com/david-tejada/frontendmentor-challenges/tree/main/06-huddle-landing-page-with-single-introductory-section)
 - Live Site URL: [Huddle landing page with single introductory section challenge on Frontend Mentor](https://magenta-cassata-09377a.netlify.com)
 
 ## My process
