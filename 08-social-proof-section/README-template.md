@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [frontendmentor-challenges/08-social-proof-section](https://github.com/david-tejada/08-social-proof-section)
+- Solution URL: [frontendmentor-challenges/08-social-proof-section](https://github.com/david-tejada/frontendmentor-challenges/tree/main/08-social-proof-section)
 - Live Site URL: [Frontend Mentor | Social proof section](https://singular-platypus-eb5b74.netlify.app/)
 
 ## My process
