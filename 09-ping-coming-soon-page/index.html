@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img class="logo" src="images/logo.svg" role="presentation" />
+      </header>
+      <main>
+        <h1 class="main-heading">We are launching <strong>soon!</strong></h1>
+        <p>Subscribe and get notified</p>
+        <form novalidate class="form">
+          <div class="form__email">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email address..."
+              required
+            />
+            <p class="form__message">Please provide a valid email address</p>
+          </div>
+          <button type="submit" class="form__button">Notify Me</button>
+        </form>
+        <img
+          class="illustration"
+          src="images/illustration-dashboard.png"
+          alt="UI interface mockup"
+        />
+      </main>
+      <footer>
+        <div class="social-links">
+          <a href="#"
+            ><i class="fa-brands fa-facebook-f" title="Facebook link"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-twitter" title="Twitter link"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-instagram" title="Instagram link"></i
+          ></a>
+        </div>
+        <div class="copyright">&copy; Copyright Ping. All rights reserved.</div>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
