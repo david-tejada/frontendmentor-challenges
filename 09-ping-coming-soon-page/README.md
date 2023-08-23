@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/09-ping-coming-soon-page](https://github.com/david-tejada/frontendmentor-challenges/tree/main/09-ping-coming-soon-page)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | Ping coming soon page](https://eclectic-taiyaki-070df3.netlify.app/)
 
 ## My process
 
