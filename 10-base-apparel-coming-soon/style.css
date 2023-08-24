@@ -1,0 +1,205 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Page Styles */
+:root {
+  --red-200: hsl(0 36% 82%);
+  --red-300: hsl(0 36% 70%);
+  --red-400: hsl(0 93% 68%);
+  --red-800: hsl(0 6% 24%);
+
+  --gradient-red-100: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+  --gradient-red-200: linear-gradient(
+    135deg,
+    hsl(0, 80%, 92%),
+    hsl(0, 74%, 86%)
+  );
+  --gradient-red-300: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%)
+  );
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  background: var(--gradient-red-100);
+  min-height: 100svh;
+  color: var(--red-300);
+  line-height: 1.8;
+}
+
+header {
+  padding: 2rem;
+  max-width: 30rem;
+  margin-inline: auto;
+}
+
+header img {
+  width: 7rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, calc(2.15rem + 1.74vw), 3.5rem);
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+h1 strong {
+  color: var(--red-800);
+  font-weight: 600;
+}
+
+.hero-picture img {
+  width: min(100%, 35rem);
+  margin-inline: auto;
+}
+
+.hero-content {
+  padding: 4rem 2rem;
+  display: grid;
+  gap: 1.5rem;
+  max-width: 30rem;
+  margin-inline: auto;
+}
+
+form {
+  --padding: 0.75rem 1.75rem;
+  position: relative;
+}
+
+[type="email"] {
+  width: 100%;
+  margin-right: 1rem;
+  padding: var(--padding);
+  border-radius: 999px;
+  border: 1px solid var(--red-300);
+  background-color: transparent;
+}
+
+[type="email"]::placeholder {
+  color: var(--red-300);
+}
+
+[type="email"]:focus {
+  outline: 1px solid var(--red-300);
+}
+
+.email-error [type="email"] {
+  background-image: url("images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: right 4.5rem center;
+}
+
+.alert {
+  display: none;
+}
+
+.email-error .alert {
+  display: block;
+  position: absolute;
+  bottom: -1.75rem;
+  font-size: 0.8125rem;
+  padding-left: 1.75rem;
+  color: var(--red-400);
+}
+
+button[type="submit"] {
+  position: absolute;
+  inset: 0 0 0 auto;
+  padding: var(--padding);
+  border-radius: 999px;
+  border: none;
+  background: var(--gradient-red-300);
+  box-shadow: 2px 8px 20px hsl(0 36% 70% / 75%);
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: var(--gradient-red-200);
+  box-shadow: 2px 8px 20px hsl(0 36% 70% / 95%);
+}
+
+@media screen and (min-width: 58rem) {
+  body {
+    background: url("images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    text-align: left;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 10fr 9fr;
+    align-items: start;
+    padding-left: 10rem;
+  }
+
+  picture {
+    grid-area: 1 / 2 / 3 / 3;
+  }
+
+  .hero-picture img {
+    width: auto;
+  }
+
+  .hero-content {
+    grid-area: 2/1/3/2;
+    gap: 3rem;
+    margin: 0;
+  }
+
+  header {
+    margin: 0;
+  }
+}
