@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/10-base-apparel-coming-soon](https://github.com/david-tejada/frontendmentor-challenges/tree/main/10-base-apparel-coming-soon)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | Base Apparel coming soon page](https://clinquant-halva-85d69c.netlify.app/)
 
 ## My process
 
