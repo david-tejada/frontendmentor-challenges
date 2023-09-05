@@ -142,48 +142,49 @@ h1 {
   display: flex;
   justify-content: space-between;
   position: relative;
+}
 
-  & input {
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    opacity: 0;
-    width: 3rem;
-    height: 3rem;
-    background-color: white;
-  }
+.radio-button__input {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 0;
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+}
 
-  & .rating {
-    display: grid;
-    place-items: center;
-    background-color: var(--color-blue-700);
-    width: 3rem;
-    height: 3rem;
-    border-radius: 999px;
-    cursor: pointer;
-    position: relative;
+.radio-button__text {
+  display: grid;
+  place-items: center;
+  background-color: var(--color-blue-700);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+}
 
-    &:hover {
-      color: white;
-      background-color: var(--color-orange);
-    }
-  }
+/* Outline for when the radio button is focused */
+.radio-button:focus-within .radio-button__text::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border: 1px solid var(--color-blue-400);
+  border-radius: 999px;
+}
 
-  & :checked + .rating {
-    color: white;
-    background-color: var(--color-blue-400);
-  }
+.radio-button__text:hover {
+  color: white;
+  background-color: var(--color-orange);
+}
 
-  & label:focus-within .rating::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
-    border: 2px solid var(--color-blue-400);
-    border-radius: 999px;
-  }
+.radio-button__input:checked + .radio-button__text {
+  color: white;
+  background-color: var(--color-blue-400);
 }
 
 button {
@@ -197,11 +198,28 @@ button {
   background-color: var(--color-orange);
   border: none;
   cursor: pointer;
+  outline: none;
+  position: relative;
+}
 
-  &:hover {
-    color: var(--color-orange);
-    background-color: white;
-  }
+button:hover {
+  color: var(--color-orange);
+  background-color: white;
+}
+
+button:focus::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border: 1px solid var(--color-orange);
+  border-radius: 999px;
+}
+
+button:hover::before {
+  border-color: white;
 }
 
 /* Utilities */
