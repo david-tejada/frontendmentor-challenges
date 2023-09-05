@@ -147,11 +147,7 @@ h1 {
 .radio-button__input {
   position: absolute;
   top: 0;
-  z-index: -1;
   opacity: 0;
-  width: 3rem;
-  height: 3rem;
-  background-color: white;
 }
 
 .radio-button__text {
