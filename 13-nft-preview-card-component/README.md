@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/13-nft-preview-card-component](https://github.com/david-tejada/frontendmentor-challenges/tree/main/13-nft-preview-card-component)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | NFT preview card component](https://magical-tiramisu-145886.netlify.app/)
 
 ## My process
 
