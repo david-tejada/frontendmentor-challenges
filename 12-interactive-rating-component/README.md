@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [frontendmentor-challenges/12-interactive-rating-componento](https://github.com/david-tejada/frontendmentor-challenges/tree/main/12-interactive-rating-component)
+- Solution URL: [frontendmentor-challenges/12-interactive-rating-component](https://github.com/david-tejada/frontendmentor-challenges/tree/main/12-interactive-rating-component)
 - Live Site URL: [Frontend Mentor | Interactive rating component](https://guileless-mousse-ec8e0c.netlify.app/)
 
 ## My process
