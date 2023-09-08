@@ -26,7 +26,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/14-testimonials-grid-section](https://github.com/david-tejada/frontendmentor-challenges/tree/main/14-testimonials-grid-section)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | [Challenge Name Here]](https://steady-dusk-95709f.netlify.app/)
 
 ## My process
 
