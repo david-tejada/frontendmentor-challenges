@@ -150,6 +150,13 @@ button {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
+  border: 1px solid red;
+}
+
+.card--has-image .card__text {
+  align-self: start;
+  padding: 1rem;
+  background-color: aquamarine;
 }
 
 .card__image {
