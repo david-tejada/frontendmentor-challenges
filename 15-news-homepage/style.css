@@ -114,6 +114,10 @@ button {
   color: var(--color-blue-500);
 }
 
+.main-navigation__list a:hover {
+  color: var(--color-red);
+}
+
 .main-navigation__toggle {
   display: none;
 }
