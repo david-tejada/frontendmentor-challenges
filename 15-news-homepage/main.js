@@ -1,3 +1,4 @@
+const mainNavigation = document.querySelector(".main-navigation");
 const mainNavigationWrapper = document.querySelector(
   ".main-navigation__list-wrapper"
 );
@@ -14,6 +15,14 @@ mainNavToggle.addEventListener("click", () => {
   }
 });
 
+mainNavigation.addEventListener("focusout", (event) => {
+  console.log(event);
+  if (!mainNavigation.contains(event.relatedTarget)) {
+    mainNavToggle.setAttribute("aria-expanded", false);
+    mainNavigationWrapper.setAttribute("data-visible", false);
+  }
+});
+
 const navLinks = document.querySelectorAll(".main-navigation li a");
 
 for (const link of navLinks) {
@@ -22,23 +31,6 @@ for (const link of navLinks) {
     mainNavigationWrapper.setAttribute("data-visible", false);
   });
 }
-
-mainNavToggle.addEventListener("keydown", (event) => {
-  console.log(event);
-  if (event.key === "Tab" && event.shiftKey) {
-    event.preventDefault();
-    lastNavLink.focus();
-  }
-});
-
-const lastNavLink = document.querySelector(".main-navigation li:last-child a");
-
-lastNavLink.addEventListener("keydown", (event) => {
-  if (event.key === "Tab" && !event.shiftKey) {
-    event.preventDefault();
-    mainNavToggle.focus();
-  }
-});
 
 const articles = document.querySelectorAll("article");
 
