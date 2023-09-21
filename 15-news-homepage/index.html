@@ -28,32 +28,35 @@
     <div class="container">
       <header class="main-header">
         <div class="page-logo"><img src="assets/images/logo.svg" alt="" /></div>
-        <button
-          id="main-navigation-toggle"
-          class="main-navigation__toggle"
-          aria-expanded="false"
-          aria-controls="main-navigation"
-          aria-label="Menu"
-        >
-          <img class="icon-open" src="assets/images/icon-menu.svg" alt="" />
-          <img
-            class="icon-close"
-            src="assets/images/icon-menu-close.svg"
-            alt=""
-          />
-        </button>
+
         <nav class="main-navigation">
-          <ul
-            id="main-navigation"
-            data-visible="false"
-            class="main-navigation__list"
+          <button
+            id="main-navigation-toggle"
+            class="main-navigation__toggle"
+            aria-expanded="false"
+            aria-controls="main-navigation"
+            aria-label="Menu"
           >
-            <li><a href="#home">Home</a></li>
-            <li><a href="#new">New</a></li>
-            <li><a href="#popular">Popular</a></li>
-            <li><a href="#trending">Trending</a></li>
-            <li><a href="#categories">Categories</a></li>
-          </ul>
+            <img class="icon-open" src="assets/images/icon-menu.svg" alt="" />
+            <img
+              class="icon-close"
+              src="assets/images/icon-menu-close.svg"
+              alt=""
+            />
+          </button>
+          <div class="main-navigation__list-wrapper">
+            <ul
+              id="main-navigation"
+              data-visible="false"
+              class="main-navigation__list"
+            >
+              <li><a href="#home">Home</a></li>
+              <li><a href="#new">New</a></li>
+              <li><a href="#popular">Popular</a></li>
+              <li><a href="#trending">Trending</a></li>
+              <li><a href="#categories">Categories</a></li>
+            </ul>
+          </div>
         </nav>
       </header>
 

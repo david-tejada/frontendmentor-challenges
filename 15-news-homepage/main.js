@@ -1,14 +1,16 @@
-const mainNavigation = document.querySelector(".main-navigation");
+const mainNavigationWrapper = document.querySelector(
+  ".main-navigation__list-wrapper"
+);
 const mainNavToggle = document.querySelector("#main-navigation-toggle");
 
 mainNavToggle.addEventListener("click", () => {
   const expanded = mainNavToggle.getAttribute("aria-expanded");
   if (expanded === "false") {
     mainNavToggle.setAttribute("aria-expanded", true);
-    mainNavigation.setAttribute("data-visible", true);
+    mainNavigationWrapper.setAttribute("data-visible", true);
   } else {
     mainNavToggle.setAttribute("aria-expanded", false);
-    mainNavigation.setAttribute("data-visible", false);
+    mainNavigationWrapper.setAttribute("data-visible", false);
   }
 });
 
@@ -17,7 +19,7 @@ const navLinks = document.querySelectorAll(".main-navigation li a");
 for (const link of navLinks) {
   link.addEventListener("click", () => {
     mainNavToggle.setAttribute("aria-expanded", false);
-    mainNavigation.setAttribute("data-visible", false);
+    mainNavigationWrapper.setAttribute("data-visible", false);
   });
 }
 
