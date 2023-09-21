@@ -106,12 +106,12 @@ button {
 .main-navigation__list {
   display: flex;
   list-style-type: none;
-  gap: 2rem;
 }
 
 .main-navigation__list a {
   text-decoration: none;
   color: var(--color-blue-500);
+  padding: 1em;
 }
 
 .main-navigation__list a:hover {
@@ -322,6 +322,10 @@ button {
     padding-top: 10rem;
     flex-direction: column;
     min-width: min(20rem, 100vw);
+  }
+
+  .main-navigation__list {
+    gap: 2rem;
   }
 
   .main-navigation__toggle {
