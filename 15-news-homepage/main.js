@@ -4,22 +4,35 @@ const mainNavigationWrapper = document.querySelector(
 );
 const mainNavToggle = document.querySelector("#main-navigation-toggle");
 
+function collapseNavigation() {
+  mainNavToggle.setAttribute("aria-expanded", false);
+  mainNavigationWrapper.setAttribute("data-visible", false);
+}
+
+function expandNavigation() {
+  mainNavToggle.setAttribute("aria-expanded", true);
+  mainNavigationWrapper.setAttribute("data-visible", true);
+}
+
 mainNavToggle.addEventListener("click", () => {
   const expanded = mainNavToggle.getAttribute("aria-expanded");
   if (expanded === "false") {
-    mainNavToggle.setAttribute("aria-expanded", true);
-    mainNavigationWrapper.setAttribute("data-visible", true);
+    expandNavigation();
   } else {
-    mainNavToggle.setAttribute("aria-expanded", false);
-    mainNavigationWrapper.setAttribute("data-visible", false);
+    collapseNavigation();
   }
 });
 
 mainNavigation.addEventListener("focusout", (event) => {
-  console.log(event);
   if (!mainNavigation.contains(event.relatedTarget)) {
-    mainNavToggle.setAttribute("aria-expanded", false);
-    mainNavigationWrapper.setAttribute("data-visible", false);
+    collapseNavigation();
+  }
+});
+
+mainNavigation.addEventListener("keyup", (event) => {
+  if (event.key === "Escape") {
+    collapseNavigation();
+    mainNavToggle.focus();
   }
 });
 
@@ -27,8 +40,7 @@ const navLinks = document.querySelectorAll(".main-navigation li a");
 
 for (const link of navLinks) {
   link.addEventListener("click", () => {
-    mainNavToggle.setAttribute("aria-expanded", false);
-    mainNavigationWrapper.setAttribute("data-visible", false);
+    collapseNavigation();
   });
 }
 
