@@ -18,9 +18,9 @@ export function ProfileCard({
     <div className={styles["profile-card"]}>
       <div className={styles.header}>
         <img src={imageUrl} alt="" />
-        <p>
+        <h1>
           Report for <span className={styles.name}>{name}</span>
-        </p>
+        </h1>
       </div>
       <form className={styles["period-selector"]}>
         <input
