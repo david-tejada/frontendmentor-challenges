@@ -1,0 +1,15 @@
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-blue-200);
+
+  /* Increase clickable area */
+  position: relative;
+  padding: 1rem;
+  margin: -1rem;
+}
+
+.button:hover {
+  color: white;
+}

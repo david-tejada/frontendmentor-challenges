@@ -1,0 +1,126 @@
+.card {
+  display: grid;
+  grid-template-rows: var(--card-padding-top, 2.5rem) 1fr;
+  border-radius: 1rem;
+
+  /* Fix the background color of the card bleeding over the bottom rounded
+  corners: https://dev.to/rashidshamloo/css-fixing-background-color-bleed-in-rounded-corners-2kh4 */
+  background-image: var(--background-icon-url),
+    linear-gradient(var(--background-color) 0% 50%, transparent 50% 100%);
+  background-position: top -0.5rem right 1rem, top left;
+
+  background-repeat: no-repeat;
+  overflow: hidden;
+  color: white;
+  container-type: inline-size;
+}
+
+.card::before {
+  content: "";
+}
+
+.card.work {
+  --background-icon-url: url("/images/icon-work.svg");
+  --background-color: var(--color-light-orange);
+}
+
+.card.play {
+  --background-icon-url: url("/images/icon-play.svg");
+  --background-color: var(--color-soft-blue);
+}
+
+.card.study {
+  --background-icon-url: url("/images/icon-study.svg");
+  --background-color: var(--color-light-red);
+}
+
+.card.exercise {
+  --background-icon-url: url("/images/icon-exercise.svg");
+  --background-color: var(--color-lime-green);
+}
+
+.card.social {
+  --background-icon-url: url("/images/icon-social.svg");
+  --background-color: var(--color-violet);
+}
+
+.card.self-care {
+  --background-icon-url: url("/images/icon-self-care.svg");
+  --background-color: var(--color-soft-orange);
+}
+
+.content {
+  background-color: var(--color-blue-700);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+
+a {
+  /* Remove the default <a> styles */
+  color: inherit;
+  text-decoration: none;
+}
+
+.content:hover {
+  background-color: var(--color-blue-600);
+}
+
+/* I handle this using event listeners but leaving this code here would make it
+possible to just remove those event listeners one's support for :has is enough
+*/
+.content:has(button:hover) {
+  background-color: var(--color-blue-700);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.timings {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  text-align: end;
+}
+
+@container (inline-size < 18rem) {
+  .timings {
+    flex-direction: column;
+    gap: 0;
+    align-items: start;
+  }
+}
+
+.current-timing {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.previous-timing {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-blue-200);
+}
+
+@media screen and (min-width: 55rem) {
+  /* This is a fallback for browsers that don't support container queries */
+  .timings {
+    flex-direction: column;
+    gap: 0;
+    align-items: start;
+  }
+
+  .current-timing {
+    font-size: var(--fs-xl);
+    margin-top: 0.25em;
+  }
+}

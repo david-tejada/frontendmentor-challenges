@@ -1,0 +1,79 @@
+.profile-card {
+  border-radius: 1rem;
+  background-color: var(--color-blue-700);
+  overflow: hidden;
+  color: white;
+}
+
+.header,
+.period-selector {
+  padding: 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-blue);
+  border-radius: 1rem;
+  color: var(--color-blue-200);
+  line-height: 1.2;
+}
+
+.header .name {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
+}
+
+.header img {
+  width: 70px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.period-selector {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.period-selector input {
+  display: none;
+}
+
+.period-selector label {
+  color: var(--color-blue-200);
+  cursor: pointer;
+}
+
+.period-selector :checked + label,
+.period-selector label:hover {
+  color: white;
+}
+
+@media screen and (min-width: 55rem) {
+  .profile-card {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .header p {
+    margin-top: 1rem;
+  }
+
+  .header .name {
+    font-size: var(--fs-xl);
+  }
+
+  .period-selector {
+    flex-direction: column;
+  }
+}

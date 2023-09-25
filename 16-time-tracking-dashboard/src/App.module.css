@@ -1,0 +1,42 @@
+:root {
+  --card-padding-top: 2.5rem;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+}
+
+.container {
+  display: grid;
+  gap: var(--gap);
+  padding-block: 5rem;
+  width: min(calc(100% - var(--gap) * 2), 70rem);
+}
+
+@media screen and (min-width: 30rem) {
+  :root {
+    --card-padding-top: 3rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media screen and (min-width: 55rem) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .container > :first-child {
+    grid-column: auto;
+    grid-row: 1 / -1;
+  }
+}
