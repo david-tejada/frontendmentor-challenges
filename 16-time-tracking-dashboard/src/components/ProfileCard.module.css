@@ -40,10 +40,6 @@
   justify-content: space-between;
 }
 
-.period-selector input {
-  display: none;
-}
-
 .period-selector label {
   color: var(--color-blue-200);
   cursor: pointer;

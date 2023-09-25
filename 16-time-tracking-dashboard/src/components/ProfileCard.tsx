@@ -24,6 +24,7 @@ export function ProfileCard({
       </div>
       <form className={styles["period-selector"]}>
         <input
+          className="visually-hidden"
           type="radio"
           name="period"
           id="daily"
@@ -33,6 +34,7 @@ export function ProfileCard({
         />
         <label htmlFor="daily">Daily</label>
         <input
+          className="visually-hidden"
           type="radio"
           name="period"
           id="weekly"
@@ -42,6 +44,7 @@ export function ProfileCard({
         />
         <label htmlFor="weekly">Weekly</label>
         <input
+          className="visually-hidden"
           type="radio"
           name="period"
           id="monthly"
