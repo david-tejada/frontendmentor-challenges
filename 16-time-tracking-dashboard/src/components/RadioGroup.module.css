@@ -8,11 +8,21 @@
 .radio-group label {
   color: var(--color-blue-200);
   cursor: pointer;
+
+  /* This is for the focus styles */
+  padding: 0.25em 0.5em;
+  margin: -0.25em -0.5em;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
 }
 
 .radio-group :checked + label,
 .radio-group label:hover {
   color: white;
+}
+
+.radio-group :focus-visible + label {
+  border-color: currentColor;
 }
 
 @media screen and (min-width: 62rem) {
