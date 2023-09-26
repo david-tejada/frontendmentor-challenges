@@ -38,7 +38,7 @@ h1 {
   border: 3px solid white;
 }
 
-@media screen and (min-width: 55rem) {
+@media screen and (min-width: 62rem) {
   .profile-card {
     display: grid;
     grid-template-rows: 2fr 1fr;

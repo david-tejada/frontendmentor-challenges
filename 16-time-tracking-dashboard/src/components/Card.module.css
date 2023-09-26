@@ -111,7 +111,7 @@ possible to just remove those event listeners one's support for :has is enough
   color: var(--color-blue-200);
 }
 
-@media screen and (min-width: 55rem) {
+@media screen and (min-width: 62rem) {
   /* This is a fallback for browsers that don't support container queries */
   .timings {
     flex-direction: column;

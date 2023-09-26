@@ -29,7 +29,7 @@ main {
   }
 }
 
-@media screen and (min-width: 55rem) {
+@media screen and (min-width: 62rem) {
   .container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
