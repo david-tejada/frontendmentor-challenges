@@ -5,8 +5,7 @@
   color: white;
 }
 
-.header,
-.period-selector {
+.header {
   padding: 1.5rem;
 }
 
@@ -39,22 +38,6 @@ h1 {
   border: 3px solid white;
 }
 
-.period-selector {
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-}
-
-.period-selector label {
-  color: var(--color-blue-200);
-  cursor: pointer;
-}
-
-.period-selector :checked + label,
-.period-selector label:hover {
-  color: white;
-}
-
 @media screen and (min-width: 55rem) {
   .profile-card {
     display: grid;
@@ -72,9 +55,5 @@ h1 {
 
   .header .name {
     font-size: var(--fs-xl);
-  }
-
-  .period-selector {
-    flex-direction: column;
   }
 }
