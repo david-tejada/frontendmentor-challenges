@@ -2,8 +2,9 @@ import styles from "./RadioGroup.module.css";
 
 // I'm not entirely sure how the generics work here, somebody in the TypeScript
 // Discord proposed this solution so that `selected` must be one of the strings
-// in `options`.
-interface RadioGroupProps<T extends [] | readonly string[]> {
+// in `options`. This article explains why the use of readonly with arrays:
+// https://ayubbegimkulov.com/readonly-arrays-ts/
+interface RadioGroupProps<T extends readonly string[]> {
   name: string;
   options: T;
   selected: T[number];
