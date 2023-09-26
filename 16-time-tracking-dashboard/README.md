@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [frontendmentor-challenges/16-time-tracking-dashboard](https://github.com/david-tejada/frontendmentor-challenges/tree/main/16-time-tracking-dashboard)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Frontend Mentor | Time tracking dashboard](https://delicate-valkyrie-32b487.netlify.app/)
 
 ## My process
 
@@ -79,3 +79,4 @@ This could have been solved using the `has` selector but support is not enough a
 
 - [Cards](https://inclusive-components.design/cards/)
 - [TypeScript: Always use readonly arrays in generic types | Ayub Begimkulov](https://ayubbegimkulov.com/readonly-arrays-ts/)
+- [CSS: Fixing background color bleed in rounded corners - DEV Community](https://dev.to/rashidshamloo/css-fixing-background-color-bleed-in-rounded-corners-2kh4)
