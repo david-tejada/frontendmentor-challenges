@@ -1,18 +1,18 @@
 import styles from "./RadioGroup.module.css";
 
-interface RadioGroupProps<T extends string> {
+// I'm not entirely sure how the generics work here, somebody in the TypeScript
+// Discord proposed this solution so that `selected` must be one of the strings
+// in `options`.
+interface RadioGroupProps<T extends [] | readonly string[]> {
   name: string;
-  options: T[];
-  selected: T;
-  onChange(value: T): void;
+  options: T;
+  selected: T[number];
+  onChange(value: T[number]): void;
 }
 
-export function RadioGroup<T extends string>({
-  name,
-  options,
-  selected,
-  onChange,
-}: RadioGroupProps<T>) {
+export function RadioGroup<
+  T extends readonly ("" | (string & NonNullable<unknown>))[]
+>({ name, options, selected, onChange }: RadioGroupProps<T>) {
   const radios = options.map((option, index) => {
     const id = `${name}-${option}`;
     return (
