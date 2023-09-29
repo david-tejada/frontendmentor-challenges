@@ -33,7 +33,11 @@ export default {
     fontFamily: {
       sans: ["League Spartan", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      screens: {
+        "forced-colors": { raw: "(forced-colors: active)" },
+      },
+    },
   },
   plugins: [],
 };
