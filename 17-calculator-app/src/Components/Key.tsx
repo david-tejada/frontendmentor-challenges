@@ -33,7 +33,7 @@ export function Key({ code, span = 1, onClick }: KeyProps) {
       data-code={code}
       onClick={() => onClick(code)}
       type="button"
-      className={`rounded-md p-3 shadow-[0_4px_0] shadow-shadow-key ${textSizeClass} ${colSpanClass} bg-background-key text-content-key`}
+      className={`rounded-md p-3 shadow-[0_4px_0] shadow-shadow-key hover:brightness-150 ${textSizeClass} ${colSpanClass} bg-background-key text-content-key`}
     >
       {code}
     </button>

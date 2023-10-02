@@ -67,7 +67,7 @@ export function ThemeSwitcher() {
           checked={theme === "3"}
           onChange={(e) => handleThemeChange(e)}
         />
-        <div className="forced-colors:bg-[ButtonText] absolute left-0 aspect-square h-full rounded-full bg-accent transition-all duration-300 ease-in-out [#theme2:checked~&]:left-[calc(50%-0.5rem)] [#theme3:checked~&]:left-[calc(100%-1rem)]"></div>
+        <div className="pointer-events-none absolute left-0 aspect-square h-full rounded-full bg-accent transition-all duration-300 ease-in-out forced-colors:bg-[ButtonText] [#theme2:checked~&]:left-[calc(50%-0.5rem)] [#theme3:checked~&]:left-[calc(100%-1rem)] [:hover>&]:brightness-150"></div>
       </div>
     </div>
   );
