@@ -1,4 +1,5 @@
 import "./App.css";
+import { Calculator } from "./Components/Calculator";
 import { ThemeSwitcher } from "./Components/ThemeSwitcher";
 
 function App() {
@@ -8,6 +9,9 @@ function App() {
         <h1 className="text-4xl">calc</h1>
         <ThemeSwitcher />
       </header>
+      <main>
+        <Calculator />
+      </main>
     </div>
   );
 }
