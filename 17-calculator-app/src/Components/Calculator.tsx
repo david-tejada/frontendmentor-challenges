@@ -4,54 +4,110 @@ import { KeyCode } from "./Key";
 import { Keypad } from "./Keypad";
 import { calculate } from "../calculate";
 
+interface Operator {
+  type: "operator";
+  value: "+" | "-" | "x" | "/";
+}
+
+interface Operand {
+  type: "operand";
+  value: string;
+}
+
+interface Result {
+  type: "result";
+  value: string;
+}
+
+type Item = Operator | Operand | Result;
+
+function getBufferString(buffer: Item[]) {
+  return buffer.map((unit) => unit.value).join("");
+}
+
+function isOperator(code: string): code is Operator["value"] {
+  return ["+", "-", "x", "/"].includes(code);
+}
+
 export function Calculator() {
-  const [buffer, setBuffer] = useState("");
+  const [buffer, setBuffer] = useState<Item[]>([
+    { type: "operand", value: "0" },
+  ]);
 
   function handleKeyPress(code: KeyCode) {
-    if (buffer === "" && code === "-") {
-      setBuffer("0-");
-    }
+    setBuffer((previous) => {
+      let next = [...previous].map((item) => ({ ...item }));
+      const lastItem = next.length ? next[next.length - 1] : undefined;
 
-    if (code === "RESET") {
-      setBuffer("");
-    }
-
-    if (code === "DEL") {
-      setBuffer((previous) => previous.slice(0, previous.length - 1));
-    }
-
-    if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(code)) {
-      setBuffer((previous) => previous + code);
-    }
-
-    if (["+", "-", "x", "/"].includes(code)) {
-      setBuffer((previous) => {
-        const last = previous[previous.length - 1];
-        if (["+", "-", "x", "/"].includes(last)) {
-          previous = previous.slice(0, previous.length - 1);
+      if (isOperator(code)) {
+        if (lastItem?.type === "operator") {
+          lastItem.value = code;
+        } else {
+          next.push({ type: "operator", value: code });
         }
-        return previous + code;
-      });
-    }
+      }
 
-    if (code === ".") {
-      setBuffer((previous) => {
-        const match = previous.match(/([+-/x]|^)(\d*\.?\d*)$/);
-        if (match && match[match.length - 1].includes(".")) {
-          return previous;
+      if (code === "RESET") {
+        next = [];
+      }
+
+      if (code === "DEL") {
+        if (lastItem?.type === "operator") {
+          next.pop();
         }
-        return previous + ".";
-      });
-    }
 
-    if (code === "=") {
-      setBuffer((previous) => String(calculate(previous)));
-    }
+        if (lastItem?.type === "operand") {
+          if (lastItem.value.length > 1) {
+            lastItem.value = lastItem.value.slice(0, -1);
+          } else {
+            next.pop();
+          }
+        }
+
+        if (lastItem?.type === "result") {
+          next = [];
+        }
+      }
+
+      if (/\d/.test(code)) {
+        if (lastItem?.type === "operand") {
+          if (lastItem.value === "0") {
+            lastItem.value = code;
+          } else {
+            lastItem.value += code;
+          }
+        } else if (lastItem?.type === "result") {
+          next = [{ type: "operand", value: code }];
+        } else {
+          next.push({ type: "operand", value: code });
+        }
+      }
+
+      if (code === ".") {
+        if (lastItem?.type === "operand") {
+          if (!lastItem.value.includes(".")) {
+            lastItem.value += code;
+          }
+        } else if (lastItem?.type === "result") {
+          next = [{ type: "operand", value: "0." }];
+        } else {
+          next.push({ type: "operand", value: "0." });
+        }
+      }
+
+      if (code === "=") {
+        next = [
+          { type: "result", value: String(calculate(getBufferString(next))) },
+        ];
+      }
+
+      return next.length ? next : [{ type: "operand", value: "0" }];
+    });
   }
 
   return (
     <>
-      <Display value={buffer} />
+      <Display value={getBufferString(buffer)} />
       <Keypad onKeyPress={handleKeyPress} />
     </>
   );
