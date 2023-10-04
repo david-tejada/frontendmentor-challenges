@@ -2,19 +2,19 @@ import { test, expect } from "vitest";
 import { calculate } from "./calculate";
 
 test("It handles addition", () => {
-  expect(calculate("2+2")).toBe(4);
+  expect(calculate("2+2+8")).toBe(12);
 });
 
 test("It handles substraction", () => {
-  expect(calculate("4-2")).toBe(2);
+  expect(calculate("8-4-2")).toBe(2);
 });
 
 test("It handles multiplication", () => {
-  expect(calculate("5x2")).toBe(10);
+  expect(calculate("5x2x2")).toBe(20);
 });
 
 test("It handles division", () => {
-  expect(calculate("5/2")).toBe(2.5);
+  expect(calculate("10/2/2")).toBe(2.5);
 });
 
 test("It limits results to 5 decimal places", () => {

@@ -2,40 +2,37 @@ import { useState } from "react";
 import { Display } from "./Display";
 import { KeyCode } from "./Key";
 import { Keypad } from "./Keypad";
-import { calculate } from "../calculate";
+import { calculate, isOperator } from "../calculate";
 
-interface Operator {
+interface OperatorItem {
   type: "operator";
   value: "+" | "-" | "x" | "/";
 }
 
-interface Operand {
+interface OperandItem {
   type: "operand";
   value: string;
 }
 
-interface Result {
+interface ResultItem {
   type: "result";
   value: string;
 }
 
-type Item = Operator | Operand | Result;
+type Item = OperatorItem | OperandItem | ResultItem;
 
 function getBufferString(buffer: Item[]) {
   return buffer.map((unit) => unit.value).join("");
 }
 
-function isOperator(code: string): code is Operator["value"] {
-  return ["+", "-", "x", "/"].includes(code);
-}
+const initialBuffer: Item[] = [{ type: "operand", value: "0" }];
 
 export function Calculator() {
-  const [buffer, setBuffer] = useState<Item[]>([
-    { type: "operand", value: "0" },
-  ]);
+  const [buffer, setBuffer] = useState<Item[]>(initialBuffer);
 
   function handleClick(code: KeyCode) {
     setBuffer((previous) => {
+      // We create a clone to avoid modifying the previous state
       let next = [...previous].map((item) => ({ ...item }));
       const lastItem = next.length ? next[next.length - 1] : undefined;
 
@@ -48,7 +45,7 @@ export function Calculator() {
       }
 
       if (code === "RESET") {
-        next = [];
+        next = initialBuffer;
       }
 
       if (code === "DEL") {
@@ -65,7 +62,7 @@ export function Calculator() {
         }
 
         if (lastItem?.type === "result") {
-          next = [];
+          next = initialBuffer;
         }
       }
 
@@ -101,7 +98,7 @@ export function Calculator() {
         ];
       }
 
-      return next.length ? next : [{ type: "operand", value: "0" }];
+      return next;
     });
   }
 

@@ -1,37 +1,54 @@
 import { divide, minus, plus, round, times } from "number-precision";
 
+type Operator = "+" | "-" | "x" | "/";
+
+export function isOperator(code: string): code is Operator {
+  return ["+", "-", "x", "/"].includes(code);
+}
+
+function assertIsOperator(code: string): asserts code is Operator {
+  if (!isOperator(code)) {
+    throw new Error("The provided operator is not valid");
+  }
+}
+
+/**
+ * Evaluate a string containing a arithmetical expression and return the result
+ * as a number
+ *
+ * @param expression A string with a arithmetical expression to execute
+ * @returns A number with the result of the expression evaluation rounded to
+ * five decimal places
+ */
 export function calculate(expression: string) {
+  // We remove any possible trailing operator
   if (/[-+x/]/.test(expression[expression.length - 1])) {
-    expression = expression.slice(0, expression.length - 1);
+    expression = expression.slice(0, -1);
   }
 
-  let parts = expression.split(/([-+x/])/g);
+  const operations = { "+": plus, "-": minus, x: times, "/": divide };
 
-  let nextMulOrDivIndex = parts.findIndex((part) => /[x/]/.test(part));
-  while (nextMulOrDivIndex !== -1) {
-    const operate = parts[nextMulOrDivIndex] === "x" ? times : divide;
-    const leftIndex = nextMulOrDivIndex - 1;
-    const leftNumber = Number(parts[leftIndex]);
-    const rightIndex = nextMulOrDivIndex + 1;
-    const rightNumber = Number(parts[rightIndex]);
+  let parts = expression.split(/([-+x/])/);
 
-    parts.splice(leftIndex, 3, String(operate(leftNumber, rightNumber)));
+  // We need to execute the operations in order of precedence
+  for (const re of [/[x/]/, /[+-]/]) {
+    let nextOperatorIndex = parts.findIndex((part) => re.test(part));
+    while (nextOperatorIndex !== -1) {
+      const operator = parts[nextOperatorIndex];
+      assertIsOperator(operator);
 
-    nextMulOrDivIndex = parts.findIndex((part) => /[x/]/.test(part));
+      const operate = operations[operator];
+
+      const leftIndex = nextOperatorIndex - 1;
+      const rightIndex = nextOperatorIndex + 1;
+      const leftNumber = Number(parts[leftIndex]);
+      const rightNumber = Number(parts[rightIndex]);
+
+      parts.splice(leftIndex, 3, String(operate(leftNumber, rightNumber)));
+
+      nextOperatorIndex = parts.findIndex((part) => re.test(part));
+    }
   }
 
-  let nextAddOrSubIndex = parts.findIndex((part) => /[+-]/.test(part));
-  while (nextAddOrSubIndex !== -1) {
-    const operate = parts[nextAddOrSubIndex] === "+" ? plus : minus;
-    const leftIndex = nextAddOrSubIndex - 1;
-    const leftNumber = Number(parts[leftIndex]);
-    const rightIndex = nextAddOrSubIndex + 1;
-    const rightNumber = Number(parts[rightIndex]);
-
-    parts.splice(leftIndex, 3, String(operate(leftNumber, rightNumber)));
-
-    nextAddOrSubIndex = parts.findIndex((part) => /[+-]/.test(part));
-  }
-
-  return Number(round(parts[0], 5));
+  return round(parts[0], 5);
 }
