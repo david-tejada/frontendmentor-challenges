@@ -34,7 +34,7 @@ export function Calculator() {
     { type: "operand", value: "0" },
   ]);
 
-  function handleKeyPress(code: KeyCode) {
+  function handleClick(code: KeyCode) {
     setBuffer((previous) => {
       let next = [...previous].map((item) => ({ ...item }));
       const lastItem = next.length ? next[next.length - 1] : undefined;
@@ -108,7 +108,7 @@ export function Calculator() {
   return (
     <>
       <Display value={getBufferString(buffer)} />
-      <Keypad onKeyPress={handleKeyPress} />
+      <Keypad onClick={handleClick} />
     </>
   );
 }
