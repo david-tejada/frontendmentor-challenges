@@ -31,7 +31,7 @@ export function calculate(expression: string) {
   let parts = expression.split(/([-+x/])/);
 
   // We need to execute the operations in order of precedence
-  for (const re of [/[x/]/, /[+-]/]) {
+  for (const re of [/^[x/]$/, /^[+-]$/]) {
     let nextOperatorIndex = parts.findIndex((part) => re.test(part));
     while (nextOperatorIndex !== -1) {
       const operator = parts[nextOperatorIndex];

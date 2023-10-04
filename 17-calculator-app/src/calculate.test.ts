@@ -32,3 +32,11 @@ test("It handles decimals without the leading zero", () => {
 test("It handles numbers with trailing decimal separator", () => {
   expect(calculate("2.x3")).toBe(6);
 });
+
+test("It handles negative numbers", () => {
+  expect(calculate("-5+10")).toBe(5);
+});
+
+test("It handles negative results", () => {
+  expect(calculate("5-10")).toBe(-5);
+});
