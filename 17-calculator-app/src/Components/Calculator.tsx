@@ -2,109 +2,123 @@ import { useState } from "react";
 import { Display } from "./Display";
 import { KeyCode } from "./Key";
 import { Keypad } from "./Keypad";
-import { calculate, isOperator } from "../calculate";
+import { calculate } from "../calculate";
 
-interface OperatorItem {
+interface Operator {
   type: "operator";
   value: "+" | "-" | "x" | "/";
 }
 
-interface OperandItem {
+interface Operand {
   type: "operand";
   value: string;
 }
 
-interface ResultItem {
+interface Result {
   type: "result";
   value: string;
 }
 
-type Item = OperatorItem | OperandItem | ResultItem;
+type Item = Operator | Operand | Result;
 
-function getBufferString(buffer: Item[]) {
-  return buffer.map((unit) => unit.value).join("");
+function isOperator(item: Item): item is Operator {
+  return item?.type === "operator";
 }
 
-const initialBuffer: Item[] = [{ type: "operand", value: "0" }];
+function isOperand(item: Item): item is Operand {
+  return item?.type === "operand";
+}
+
+function isResult(item: Item): item is Result {
+  return item?.type === "result";
+}
+
+function getExpressionString(expression: Item[]) {
+  return expression.map((unit) => unit.value).join("");
+}
+
+const initialExpression: Item[] = [{ type: "operand", value: "0" }];
 
 export function Calculator() {
-  const [buffer, setBuffer] = useState<Item[]>(initialBuffer);
+  const [expression, setExpression] = useState<Item[]>(initialExpression);
 
   function handleClick(code: KeyCode) {
-    setBuffer((previous) => {
+    setExpression((previous) => {
       // We create a clone to avoid modifying the previous state
-      let next = [...previous].map((item) => ({ ...item }));
-      const lastItem = next.length ? next[next.length - 1] : undefined;
+      let next: Item[] = [...previous].map((item) => ({ ...item }));
+      const lastItem = next[next.length - 1];
 
-      if (isOperator(code)) {
-        if (lastItem?.type === "operator") {
-          lastItem.value = code;
-        } else {
-          next.push({ type: "operator", value: code });
-        }
-      }
-
-      if (code === "RESET") {
-        next = initialBuffer;
-      }
-
-      if (code === "DEL") {
-        if (lastItem?.type === "operator") {
-          next.pop();
-        }
-
-        if (lastItem?.type === "operand") {
-          if (lastItem.value.length > 1) {
-            lastItem.value = lastItem.value.slice(0, -1);
-          } else {
-            next.pop();
-          }
-        }
-
-        if (lastItem?.type === "result") {
-          next = initialBuffer;
-        }
-      }
-
-      if (/\d/.test(code)) {
-        if (lastItem?.type === "operand") {
-          if (lastItem.value === "0") {
+      switch (code) {
+        case "+":
+        case "-":
+        case "x":
+        case "/":
+          if (isOperator(lastItem)) {
             lastItem.value = code;
           } else {
-            lastItem.value += code;
+            next.push({ type: "operator", value: code });
           }
-        } else if (lastItem?.type === "result") {
-          next = [{ type: "operand", value: code }];
-        } else {
-          next.push({ type: "operand", value: code });
-        }
-      }
+          return next;
 
-      if (code === ".") {
-        if (lastItem?.type === "operand") {
-          if (!lastItem.value.includes(".")) {
-            lastItem.value += code;
+        case "RESET":
+          return initialExpression;
+
+        case "DEL":
+          if (isOperator(lastItem)) {
+            next.pop();
           }
-        } else if (lastItem?.type === "result") {
-          next = [{ type: "operand", value: "0." }];
-        } else {
-          next.push({ type: "operand", value: "0." });
-        }
-      }
 
-      if (code === "=") {
-        next = [
-          { type: "result", value: String(calculate(getBufferString(next))) },
-        ];
-      }
+          if (isOperand(lastItem)) {
+            if (lastItem.value.length > 1) {
+              lastItem.value = lastItem.value.slice(0, -1);
+            } else {
+              next.pop();
+            }
+          }
 
-      return next;
+          if (lastItem?.type === "result") {
+            next = initialExpression;
+          }
+          return next;
+
+        case ".":
+          if (isOperand(lastItem)) {
+            if (!lastItem.value.includes(".")) {
+              lastItem.value += code;
+            }
+          } else if (isResult(lastItem)) {
+            next = [{ type: "operand", value: "0." }];
+          } else {
+            next.push({ type: "operand", value: "0." });
+          }
+          return next;
+
+        case "=":
+          return [
+            {
+              type: "result",
+              value: String(calculate(getExpressionString(next))),
+            },
+          ];
+
+        // Digits
+        default:
+          if (isOperand(lastItem)) {
+            lastItem.value =
+              lastItem.value === "0" ? code : (lastItem.value += code);
+          } else if (isResult(lastItem)) {
+            next = [{ type: "operand", value: code }];
+          } else {
+            next.push({ type: "operand", value: code });
+          }
+          return next;
+      }
     });
   }
 
   return (
     <>
-      <Display value={getBufferString(buffer)} />
+      <Display value={getExpressionString(expression)} />
       <Keypad onClick={handleClick} />
     </>
   );

@@ -2,12 +2,8 @@ import { divide, minus, plus, round, times } from "number-precision";
 
 type Operator = "+" | "-" | "x" | "/";
 
-export function isOperator(code: string): code is Operator {
-  return ["+", "-", "x", "/"].includes(code);
-}
-
 function assertIsOperator(code: string): asserts code is Operator {
-  if (!isOperator(code)) {
+  if (!["+", "-", "x", "/"].includes(code)) {
     throw new Error("The provided operator is not valid");
   }
 }
