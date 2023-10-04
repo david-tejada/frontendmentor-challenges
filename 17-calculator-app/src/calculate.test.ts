@@ -28,3 +28,7 @@ test("It handles multiple operations", () => {
 test("It handles decimals without the leading zero", () => {
   expect(calculate(".2x3")).toBe(0.6);
 });
+
+test("It handles numbers with trailing decimal separator", () => {
+  expect(calculate("2.x3")).toBe(6);
+});
