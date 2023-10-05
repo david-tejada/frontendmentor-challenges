@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Display } from "./Display";
-import { KeyCode } from "./Key";
+import { KeyCode, isKeyCode } from "./Key";
 import { Keypad } from "./Keypad";
 import { calculate } from "../calculate";
 import { addThousandsSeparators } from "../utils";
@@ -48,6 +48,21 @@ const initialExpression: Item[] = [{ type: "operand", value: "0" }];
 
 export function Calculator() {
   const [expression, setExpression] = useState<Item[]>(initialExpression);
+
+  useEffect(() => {
+    function onKeyDown({ key }: KeyboardEvent) {
+      if (isKeyCode(key)) handleClick(key);
+      if (key === "*") handleClick("x");
+      if (key === "Backspace") handleClick("DEL");
+      if (key === "Enter") handleClick("=");
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
 
   function handleClick(code: KeyCode) {
     setExpression((previous) => {

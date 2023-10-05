@@ -18,6 +18,29 @@ export type KeyCode =
   | "RESET"
   | "=";
 
+export function isKeyCode(code: string): code is KeyCode {
+  return [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    ".",
+    "+",
+    "-",
+    "x",
+    "/",
+    "DEL",
+    "RESET",
+    "=",
+  ].includes(code);
+}
+
 interface KeyProps {
   code: KeyCode;
   span?: 1 | 2;
