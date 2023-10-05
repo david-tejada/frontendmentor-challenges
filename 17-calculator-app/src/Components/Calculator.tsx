@@ -101,7 +101,7 @@ export function Calculator() {
           if (lastItem?.type === "result") {
             next = initialExpression;
           }
-          return next;
+          return next.length ? next : initialExpression;
 
         case ".":
           if (isOperand(lastItem)) {
