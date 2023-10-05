@@ -1,6 +1,5 @@
 export function addThousandsSeparators(number: string) {
   const [integer, separator, decimals] = number.split(/(\.)/);
-  console.log(integer, separator, decimals);
 
   if (!integer) return number;
 
