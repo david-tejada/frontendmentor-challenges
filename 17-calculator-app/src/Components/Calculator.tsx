@@ -3,6 +3,7 @@ import { Display } from "./Display";
 import { KeyCode } from "./Key";
 import { Keypad } from "./Keypad";
 import { calculate } from "../calculate";
+import { addThousandsSeparators } from "../utils";
 
 interface Operator {
   type: "operator";
@@ -33,8 +34,14 @@ function isResult(item: Item): item is Result {
   return item?.type === "result";
 }
 
-function getExpressionString(expression: Item[]) {
-  return expression.map((unit) => unit.value).join("");
+function getExpressionString(expression: Item[], thousandsSeparators = false) {
+  return expression
+    .map((item) =>
+      thousandsSeparators && item.type !== "operator"
+        ? addThousandsSeparators(item.value)
+        : item.value,
+    )
+    .join("");
 }
 
 const initialExpression: Item[] = [{ type: "operand", value: "0" }];
@@ -118,7 +125,7 @@ export function Calculator() {
 
   return (
     <>
-      <Display value={getExpressionString(expression)} />
+      <Display value={getExpressionString(expression, true)} />
       <Keypad onClick={handleClick} />
     </>
   );
