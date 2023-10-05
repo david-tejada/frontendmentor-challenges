@@ -1,4 +1,3 @@
-import "./App.css";
 import { Calculator } from "./Components/Calculator";
 import { ThemeSwitcher } from "./Components/ThemeSwitcher";
 
