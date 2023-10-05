@@ -18,11 +18,11 @@ export function Keypad({ onClick }: KeypadProps) {
       <Key onClick={(code) => onClick(code)} code="1" />
       <Key onClick={(code) => onClick(code)} code="2" />
       <Key onClick={(code) => onClick(code)} code="3" />
-      <Key onClick={(code) => onClick(code)} code="-" />
+      <Key onClick={(code) => onClick(code)} code="-" label="minus" />
       <Key onClick={(code) => onClick(code)} code="." />
       <Key onClick={(code) => onClick(code)} code="0" />
-      <Key onClick={(code) => onClick(code)} code="/" />
-      <Key onClick={(code) => onClick(code)} code="x" />
+      <Key onClick={(code) => onClick(code)} code="/" label="divide" />
+      <Key onClick={(code) => onClick(code)} code="x" label="times" />
       <Key onClick={(code) => onClick(code)} code="RESET" span={2} />
       <Key onClick={(code) => onClick(code)} code="=" span={2} />
     </div>

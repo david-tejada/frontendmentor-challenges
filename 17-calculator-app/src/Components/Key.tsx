@@ -43,17 +43,19 @@ export function isKeyCode(code: string): code is KeyCode {
 
 interface KeyProps {
   code: KeyCode;
+  label?: string;
   span?: 1 | 2;
   onClick(code: KeyCode): void;
 }
 
-export function Key({ code, span = 1, onClick }: KeyProps) {
+export function Key({ code, label, span = 1, onClick }: KeyProps) {
   let textSizeClass = /DEL|RESET|=/.test(code) ? "text-xl" : "text-4xl";
   let colSpanClass = span === 1 ? "col-span-1" : "col-span-2";
 
   return (
     <button
       data-code={code}
+      aria-label={label}
       onClick={() => onClick(code)}
       type="button"
       className={`rounded-md p-3 shadow-[0_4px_0] shadow-shadow-key hover:brightness-150 ${textSizeClass} ${colSpanClass} bg-background-key text-content-key`}
