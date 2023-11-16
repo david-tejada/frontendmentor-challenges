@@ -1,3 +1,3 @@
 export default function Footer() {
-  return <p>Footer</p>;
+  return <footer className="mt-auto">Footer</footer>;
 }
