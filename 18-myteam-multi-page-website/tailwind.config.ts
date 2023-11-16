@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     colors: {
       white: "hsl(0deg 0% 100%)",
+      black: "hsl(0deg 0% 0%)",
       coral: "hsl(0deg 87% 73%)",
       blue: "hsl(179deg 42% 63%)",
       green: {
