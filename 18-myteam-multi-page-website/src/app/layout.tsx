@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Livvic } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const livvic = Livvic({ subsets: ["latin"], weight: ["700", "600"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,9 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${livvic.className} flex flex-col min-h-screen text-white`}
+      >
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
