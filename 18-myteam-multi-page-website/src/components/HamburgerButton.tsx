@@ -12,7 +12,7 @@ export default function HamburgerButton({
   return (
     <button
       type="button"
-      className="z-[100] my-auto cursor-pointer"
+      className="relative z-[100] my-auto cursor-pointer"
       aria-expanded={expanded}
       onClick={onClick}
     >
