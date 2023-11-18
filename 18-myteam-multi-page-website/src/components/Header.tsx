@@ -24,7 +24,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-green-600 py-16">
+    <header className="bg-green-600 py-12">
       <Container className="relative z-50 flex justify-between gap-20 sm:justify-normal">
         {isOpen && (
           <div
