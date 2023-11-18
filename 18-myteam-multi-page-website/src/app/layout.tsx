@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${livvic.className} flex flex-col min-h-screen text-white`}
+        className={`${livvic.className} flex min-h-screen flex-col text-white`}
       >
         <Header />
         <main>{children}</main>
