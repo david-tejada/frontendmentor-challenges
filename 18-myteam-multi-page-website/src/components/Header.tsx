@@ -23,12 +23,16 @@ export default function Header() {
     });
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflowY = isOpen ? "hidden" : "unset";
+  }, [isOpen]);
+
   return (
     <header className="bg-green-600 py-12">
       <Container className="relative z-50 flex justify-between gap-20 sm:justify-normal">
         {isOpen && (
           <div
-            className="bg-black fixed inset-0 opacity-50"
+            className="fixed inset-0 bg-black opacity-50"
             onClick={(event) => setIsOpen(false)}
           ></div>
         )}
@@ -62,7 +66,7 @@ export default function Header() {
           <ul
             className={`${
               isOpen
-                ? "bg-pattern-about-1 translate-x-0 bg-[bottom_right_-100px] bg-no-repeat"
+                ? "translate-x-0 bg-pattern-about-1 bg-[bottom_right_-100px] bg-no-repeat"
                 : ""
             } ${
               isOpen === false ? "translate-x-full" : ""
