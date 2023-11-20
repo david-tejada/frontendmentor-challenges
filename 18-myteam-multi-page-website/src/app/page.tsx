@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="mx-auto max-w-[10ch] text-center text-[40px] leading-10 lg:mx-0 lg:shrink-0 lg:grow-[2] lg:text-left lg:text-7xl xl:text-8xl">
             Find the best <em className="not-italic text-coral">talent</em>
           </h1>
-          <p className="mx-auto lg:mx-0 mt-8 max-w-[52ch] text-center leading-7 lg:shrink lg:grow-[1] lg:text-left lg:before:absolute lg:before:top-0 lg:before:h-1 lg:before:w-12 lg:before:bg-blue">
+          <p className="mx-auto lg:mx-0 mt-8 max-w-[52ch] text-center leading-7 lg:shrink lg:grow lg:text-left lg:before:absolute lg:before:top-0 lg:before:h-1 lg:before:w-12 lg:before:bg-blue">
             Finding the right people and building high performing teams can be
             hard. Most companies aren’t tapping into the abundance of global
             talent. We’re about to change that.
@@ -32,7 +32,7 @@ export default function Home() {
                 className="mx-auto md:absolute md:left-[-5rem]"
               />
               <h3 className="mt-4 text-coral md:mt-0">Experience Individuals</h3>
-              <p className="pt-4 max-w-[60ch] mx-auto md:mx-0">
+              <p className="pt-4 max-w-[50ch] mx-auto md:mx-0">
                 Our network is made up of highly experienced professionals who
                 are passionate about what they do.
               </p>
@@ -46,7 +46,7 @@ export default function Home() {
                 className="mx-auto md:absolute md:left-[-5rem]"
               />
               <h3 className="mt-4 text-coral lg:mt-0">Easy to Implement</h3>
-              <p className="pt-4 max-w-[60ch] mx-auto md:mx-0">
+              <p className="pt-4 max-w-[50ch] mx-auto md:mx-0">
                 Our processes have been refined over years of implementation
                 meaning our teams always deliver.
               </p>
@@ -60,7 +60,7 @@ export default function Home() {
                 className="mx-auto md:absolute md:left-[-5rem]"
               />
               <h3 className="mt-4 text-coral lg:mt-0">Enhanced Productivity</h3>
-              <p className="pt-4 max-w-[60ch] mx-auto md:mx-0">
+              <p className="pt-4 max-w-[50ch] mx-auto md:mx-0">
                 Our customized platform with in-built analytics helps you manage
                 your distributed teams.
               </p>
