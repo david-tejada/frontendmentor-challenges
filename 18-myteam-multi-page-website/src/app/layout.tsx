@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const livvic = Livvic({ subsets: ["latin"], weight: ["700", "600"] });
+const livvic = Livvic({ subsets: ["latin"], weight: ["700", "600", "500"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${livvic.className} flex min-h-screen flex-col text-white`}
+        className={`${livvic.className} flex min-h-screen flex-col font-semibold text-white`}
       >
         <Header />
         <main>{children}</main>
