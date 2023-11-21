@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import { Testimonial } from "@/components/Testimonial";
 import Image from "next/image";
 
 export default function Home() {
@@ -82,54 +83,35 @@ export default function Home() {
             <em className="not-italic text-blue">success stories.</em>
           </h2>
           <div className="my-10 grid gap-10 lg:grid-cols-3">
-            <div>
-              <p className="mx-auto max-w-[50ch] bg-[url('/icon-quotes.svg')] bg-[center_top] bg-no-repeat pt-10 font-semibold lg:mx-0">
-                “The team perfectly fit the specialized skill set required. They
-                focused on the most essential features helping us launch the
-                platform eight months faster than planned.”
-              </p>
-              <p className="mt-4 text-lg font-bold text-blue">Kady Baker</p>
-              <p className="font-medium italic">Product Manager at Bookmark</p>
-              <Image
-                src="/avatar-kady.jpg"
-                alt=""
-                width="62"
-                height="62"
-                className="mx-auto mt-4 rounded-full border border-white"
-              />
-            </div>
-            <div>
-              <p className="mx-auto max-w-[50ch] bg-[url('/icon-quotes.svg')] bg-[center_top] bg-no-repeat pt-10 font-semibold lg:mx-0">
-                “We needed to automate our entire onboarding process. The team
-                came in and built out the whole journey. Since going live, user
-                retention has gone through the roof!”
-              </p>
-              <p className="mt-4 text-lg font-bold text-blue">Aiysha Reese</p>
-              <p className="font-medium italic">Founder of Manage</p>
-              <Image
-                src="/avatar-aiysha.jpg"
-                alt=""
-                width="62"
-                height="62"
-                className="mx-auto mt-4 rounded-full border border-white"
-              />
-            </div>
-            <div>
-              <p className="mx-auto max-w-[50ch] bg-[url('/icon-quotes.svg')] bg-[center_top] bg-no-repeat pt-10 font-semibold lg:mx-0">
-                “Amazing. Our team helped us build an app that delivered a new
-                experience for hiring a physio. The launch was an instant
-                success with 100k downloads in the first month.”
-              </p>
-              <p className="mt-4 text-lg font-bold text-blue">Arthur Clarke</p>
-              <p className="font-medium italic">Co-founder of MyPhysio</p>
-              <Image
-                src="/avatar-arthur.jpg"
-                alt=""
-                width="62"
-                height="62"
-                className="mx-auto mt-4 rounded-full border border-white"
-              />
-            </div>
+            <Testimonial
+              author="Kady Baker"
+              title="Product Manager at Bookmark"
+              avatarUrl="/avatar-kady.jpg"
+            >
+              “The team perfectly fit the specialized skill set required. They
+              focused on the most essential features helping us launch the
+              platform eight months faster than planned.”
+            </Testimonial>
+
+            <Testimonial
+              author="Aiysha Reese"
+              title="Founder of Manage"
+              avatarUrl="/avatar-aiysha.jpg"
+            >
+              “We needed to automate our entire onboarding process. The team
+              came in and built out the whole journey. Since going live, user
+              retention has gone through the roof!”
+            </Testimonial>
+
+            <Testimonial
+              author="Arthur Clarke"
+              title="Co-founder of MyPhysio"
+              avatarUrl="/avatar-arthur.jpg"
+            >
+              “Amazing. Our team helped us build an app that delivered a new
+              experience for hiring a physio. The launch was an instant success
+              with 100k downloads in the first month.”
+            </Testimonial>
           </div>
         </Container>
       </div>
