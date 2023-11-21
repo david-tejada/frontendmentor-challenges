@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import { Testimonial } from "@/components/Testimonial";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -113,6 +114,20 @@ export default function Home() {
               with 100k downloads in the first month.”
             </Testimonial>
           </div>
+        </Container>
+      </div>
+
+      <div className="bg-coral bg-[url('/bg-pattern-home-6-about-5.svg')] bg-left-bottom bg-no-repeat py-24 text-green-900">
+        <Container className="flex flex-col md:flex-row md:justify-around">
+          <h2 className="text-center  text-3xl xl:text-5xl">
+            Ready to get started?
+          </h2>
+          <Link
+            href="/contact"
+            className="mx-auto mt-4 w-fit rounded-full border-2 px-6 py-2 md:mx-0 md:mt-0"
+          >
+            contact us
+          </Link>
         </Container>
       </div>
     </>
