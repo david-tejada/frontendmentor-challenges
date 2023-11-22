@@ -19,7 +19,7 @@ export default function Home() {
         </Container>
       </div>
 
-      <div className="bg-green-700 bg-pattern-home-3 bg-[top_right_-100px] bg-no-repeat pb-20 pt-24 lg:bg-[bottom_right_-100px] lg:py-48">
+      <div className="bg-green-800 bg-pattern-home-3 bg-[top_right_-100px] bg-no-repeat pb-20 pt-24 lg:bg-[bottom_right_-100px] lg:py-48">
         <Container className="grid lg:grid-cols-2 lg:gap-20">
           <h2 className="relative mr-[40%] text-3xl font-bold leading-none before:absolute before:top-[-1em] before:h-1 before:w-12 before:bg-coral lg:mr-8 lg:text-5xl">
             Build & manage distributed teams like no one else.
@@ -117,14 +117,14 @@ export default function Home() {
         </Container>
       </div>
 
-      <div className="bg-coral bg-[url('/bg-pattern-home-6-about-5.svg')] bg-left-bottom bg-no-repeat py-24 text-green-900">
+      <div className="bg-coral bg-[url('/bg-pattern-home-6-about-5.svg')] bg-left-bottom bg-no-repeat py-24 text-green-800">
         <Container className="flex flex-col md:flex-row md:justify-around">
           <h2 className="text-center  text-3xl xl:text-5xl">
             Ready to get started?
           </h2>
           <Link
             href="/contact"
-            className="mx-auto mt-4 w-fit rounded-full border-2 px-6 py-2 md:mx-0 md:mt-0"
+            className="mx-auto mt-4 w-fit rounded-full border-2 px-6 py-2 hover:bg-green-800 hover:text-coral md:mx-0 md:mt-0"
           >
             contact us
           </Link>

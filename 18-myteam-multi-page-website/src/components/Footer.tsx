@@ -7,7 +7,7 @@ import IconPinterest from "./icons/IconPinterest";
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-green-800 py-20 text-center">
+    <footer className="mt-auto bg-green-900 py-20 text-center">
       <Container className="grid gap-8 md:grid-cols-2 xl:grid-cols-[1fr_1fr_2fr]">
         <div className="mx-auto grid w-fit md:mx-0">
           <p className="text-4xl leading-none">myteam</p>

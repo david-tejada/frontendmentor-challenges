@@ -73,19 +73,27 @@ export default function Header() {
             } fixed bottom-0 right-0 top-0 bg-green-600 p-16 pt-40 transition-transform sm:static sm:flex sm:grow sm:items-center sm:gap-8 sm:p-0`}
           >
             <li>
-              <Link href="/" onClick={() => setIsOpen(isOpen && false)}>
+              <Link
+                href="/"
+                className="hover:text-coral"
+                onClick={() => setIsOpen(isOpen && false)}
+              >
                 home
               </Link>
             </li>
             <li className="mt-8 sm:mt-0">
-              <Link href="/about" onClick={() => setIsOpen(isOpen && false)}>
+              <Link
+                href="/about"
+                className="hover:text-coral"
+                onClick={() => setIsOpen(isOpen && false)}
+              >
                 about
               </Link>
             </li>
             <li className="mt-10 sm:ml-auto sm:mt-0">
               <Link
                 href="/contact"
-                className="rounded-full border px-6 py-2"
+                className="rounded-full border px-6 py-2 hover:bg-white hover:text-green-600"
                 onClick={() => setIsOpen(isOpen && false)}
               >
                 contact us
