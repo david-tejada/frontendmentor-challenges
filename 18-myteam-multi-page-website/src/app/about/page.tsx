@@ -1,5 +1,7 @@
 import Container from "@/components/Container";
 import { PersonnelCard } from "@/components/PersonnelCard";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -90,6 +92,52 @@ export default function About() {
               “Empowered teams create truly amazing products. Set the north star
               and let them follow it.”
             </PersonnelCard>
+          </div>
+        </Container>
+      </div>
+
+      <div className="bg-green-800 bg-pattern-about-4 bg-[position:top_-100px_left_-100px] bg-no-repeat py-20 md:bg-[position:top_-100px_left] md:py-24 lg:bg-[position:top_left] lg:py-36">
+        <Container>
+          <h2 className="text-center text-2xl lg:text-3xl">
+            Some of our clients
+          </h2>
+
+          <div className="mx-auto mt-16 flex w-40 flex-col gap-16 md:w-full md:flex-row md:gap-8 xl:gap-16">
+            <Link href="#">
+              <Image src="/logo-the-verge.png" width={330} height={56} alt="" />
+            </Link>
+            <Link href="#">
+              <Image
+                src="/logo-jakarta-post.png"
+                width={368}
+                height={46}
+                alt=""
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src="/logo-the-guardian.png"
+                width={360}
+                height={56}
+                alt=""
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src="/logo-tech-radar.png"
+                width={330}
+                height={56}
+                alt=""
+              />
+            </Link>
+            <Link href="#">
+              <Image
+                src="/logo-gadgets-now.png"
+                width={196}
+                height={90}
+                alt=""
+              />
+            </Link>
           </div>
         </Container>
       </div>
