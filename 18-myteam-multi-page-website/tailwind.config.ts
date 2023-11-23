@@ -31,6 +31,15 @@ const config: Config = {
       "pattern-home-5": "url('/bg-pattern-home-5.svg')",
       "pattern-home-6": "url('/bg-pattern-home-6-about-5.svg')",
     },
+    fontSize: {
+      base: ["0.9375rem", "1.5625rem"], // 15px 25px
+      lg: ["1.125rem", "1.75rem"], // 18px 28px
+      xl: ["1.5rem", "1.5rem"], // 24px 24px
+      "2xl": ["2rem", "2rem"], // 32px 32px
+      "3xl": ["3rem", "3rem"], // 48px 48px
+      "4xl": ["4rem", "3.5rem"], // 64px 56px
+      "5xl": ["6.25rem", "6.25rem"], // 100px 100px
+    },
   },
   plugins: [],
 };
