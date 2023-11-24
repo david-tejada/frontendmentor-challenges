@@ -141,6 +141,20 @@ export default function About() {
           </div>
         </Container>
       </div>
+
+      <div className="bg-coral bg-[url('/bg-pattern-home-6-about-5.svg')] bg-left-bottom bg-no-repeat py-24 text-green-800">
+        <Container className="flex flex-col items-center md:flex-row md:justify-around">
+          <h2 className="text-center  text-2xl lg:text-3xl">
+            Ready to get started?
+          </h2>
+          <Link
+            href="/contact"
+            className="mx-auto mt-[1.5rem] w-fit rounded-full border-2 px-6 py-2 hover:bg-green-800 hover:text-coral md:mx-0 md:mt-0"
+          >
+            contact us
+          </Link>
+        </Container>
+      </div>
     </>
   );
 }
