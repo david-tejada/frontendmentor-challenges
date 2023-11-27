@@ -27,6 +27,8 @@ export function PersonnelCard({
 
   return (
     <div
+      aria-live="polite"
+      aria-atomic="true"
       className={`relative justify-center ${
         isExpanded ? "bg-green-900" : "bg-green-800"
       } pb-16 pt-8 text-center`}
@@ -43,14 +45,6 @@ export function PersonnelCard({
 
           <p className="font-bold text-blue">{name}</p>
           <p className="font-medium italic">{title}</p>
-          <button
-            type="button"
-            className="absolute bottom-[-2rem] left-[calc(50%-2rem)] grid h-16 w-16 place-items-center rounded-full bg-coral hover:bg-blue "
-            onClick={() => setIsExpanded((previous) => !previous)}
-          >
-            <div className="sr-only">More info</div>
-            <Image src="/icon-cross.svg" width={16} height={16} alt="" />
-          </button>
         </>
       )}
 
@@ -73,17 +67,22 @@ export function PersonnelCard({
               )}
             </div>
           )}
-
-          <button
-            type="button"
-            className="absolute bottom-[-2rem] left-[calc(50%-2rem)] grid h-16 w-16 place-items-center rounded-full bg-blue hover:bg-coral "
-            onClick={() => setIsExpanded((previous) => !previous)}
-          >
-            <div className="sr-only">Collapse info</div>
-            <Image src="/icon-close.svg" width={16} height={16} alt="" />
-          </button>
         </>
       )}
+
+      <button
+        type="button"
+        aria-expanded={isExpanded}
+        className={`absolute bottom-[-2rem] left-[calc(50%-2rem)] grid h-16 w-16 place-items-center rounded-full ${
+          isExpanded ? "bg-blue hover:bg-coral" : "bg-coral hover:bg-blue"
+        } `}
+        onClick={() => setIsExpanded((previous) => !previous)}
+      >
+        <div className="sr-only">More info</div>
+        {(isExpanded && (
+          <Image src="/icon-close.svg" width={16} height={16} alt="" />
+        )) || <Image src="/icon-cross.svg" width={16} height={16} alt="" />}
+      </button>
     </div>
   );
 }
