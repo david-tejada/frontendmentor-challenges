@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import IconLinkedIn from "./icons/IconLinkedIn";
 import IconTwitter from "./icons/IconTwitter";
+import clsx from "clsx";
 
 type PersonnelCardProps = {
   name: string;
@@ -29,9 +30,10 @@ export function PersonnelCard({
     <div
       aria-live="polite"
       aria-atomic="true"
-      className={`relative justify-center ${
-        isExpanded ? "bg-green-900" : "bg-green-800"
-      } pb-16 pt-8 text-center`}
+      className={clsx("relative justify-center pb-16 pt-8 text-center", {
+        "bg-green-900": isExpanded,
+        "bg-green-800": !isExpanded,
+      })}
     >
       {!isExpanded && (
         <>
@@ -73,9 +75,13 @@ export function PersonnelCard({
       <button
         type="button"
         aria-expanded={isExpanded}
-        className={`absolute bottom-[-2rem] left-[calc(50%-2rem)] grid h-16 w-16 place-items-center rounded-full ${
-          isExpanded ? "bg-blue hover:bg-coral" : "bg-coral hover:bg-blue"
-        } `}
+        className={clsx(
+          "absolute bottom-[-2rem] left-[calc(50%-2rem)] grid h-16 w-16 place-items-center rounded-full",
+          {
+            "bg-blue hover:bg-coral": isExpanded,
+            "bg-coral hover:bg-blue": !isExpanded,
+          },
+        )}
         onClick={() => setIsExpanded((previous) => !previous)}
       >
         <div className="sr-only">More info</div>

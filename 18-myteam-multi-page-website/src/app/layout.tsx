@@ -3,6 +3,7 @@ import { Livvic } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import clsx from "clsx";
 
 const livvic = Livvic({ subsets: ["latin"], weight: ["700", "600", "500"] });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${livvic.className} flex min-h-screen flex-col font-semibold text-white`}
+        className={clsx(
+          livvic.className,
+          "flex min-h-screen flex-col font-semibold text-white",
+        )}
       >
         <Header />
         <main className="flex grow flex-col">{children}</main>

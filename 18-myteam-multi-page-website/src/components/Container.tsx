@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React from "react";
 
 type ContainerProps = {
@@ -10,7 +11,7 @@ export default function Container({
   className = "",
 }: ContainerProps) {
   return (
-    <div className={`mx-auto w-10/12 max-w-6xl lg:w-9/12 ${className}`.trim()}>
+    <div className={clsx("mx-auto w-10/12 max-w-6xl lg:w-9/12", className)}>
       {children}
     </div>
   );

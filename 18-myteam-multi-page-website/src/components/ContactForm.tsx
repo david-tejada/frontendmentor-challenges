@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import clsx from "clsx";
 
 const ContactFormSchema = z.object({
   name: z.string().min(1, { message: "This field is required" }),
@@ -42,11 +43,13 @@ export default function ContactForm() {
           onChange: (event) => clearErrors("name"),
         })}
         placeholder="Name"
-        className={`${
-          isSubmitted && errors.name?.message
-            ? "text-coral placeholder:text-coral"
-            : ""
-        } bg-transparent mt-2 w-full border-b p-4 outline-none`}
+        className={clsx(
+          "mt-2 w-full border-b bg-transparent p-4 outline-none",
+          {
+            "text-coral placeholder:text-coral":
+              isSubmitted && errors.name?.message,
+          },
+        )}
       />
 
       {errors.name?.message && (
@@ -61,11 +64,13 @@ export default function ContactForm() {
           onChange: (event) => clearErrors("email"),
         })}
         placeholder="Email Address"
-        className={`${
-          isSubmitted && errors.email?.message
-            ? "text-coral placeholder:text-coral"
-            : ""
-        } bg-transparent mt-2 w-full border-b p-4 outline-none`}
+        className={clsx(
+          "mt-2 w-full border-b bg-transparent p-4 outline-none",
+          {
+            "text-coral placeholder:text-coral":
+              isSubmitted && errors.email?.message,
+          },
+        )}
       />
 
       {errors.email?.message && (
@@ -78,14 +83,14 @@ export default function ContactForm() {
         type="text"
         {...register("company")}
         placeholder="Company Name"
-        className="bg-transparent mt-2 w-full border-b p-4 outline-none"
+        className="mt-2 w-full border-b bg-transparent p-4 outline-none"
       />
 
       <input
         type="text"
         {...register("title")}
         placeholder="Title"
-        className="bg-transparent mt-2 w-full border-b p-4 outline-none"
+        className="mt-2 w-full border-b bg-transparent p-4 outline-none"
       />
 
       <textarea
@@ -95,7 +100,7 @@ export default function ContactForm() {
         placeholder="Message"
         cols={30}
         rows={3}
-        className="bg-transparent mt-2 w-full border-b p-4 outline-none"
+        className="mt-2 w-full border-b bg-transparent p-4 outline-none"
       ></textarea>
 
       {errors.message?.message && (
