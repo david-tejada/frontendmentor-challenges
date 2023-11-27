@@ -60,6 +60,7 @@ export default function Header() {
             {isOpen !== undefined && (
               <HamburgerButton
                 expanded={isOpen}
+                aria-controls="menu-list"
                 onClick={() => {
                   setIsOpen((previous) => !previous);
                 }}
@@ -67,13 +68,14 @@ export default function Header() {
             )}
 
             <ul
+              id="menu-list"
               className={`${
                 isOpen
                   ? "translate-x-0 bg-pattern-about-1 bg-[bottom_right_-100px] bg-no-repeat"
                   : ""
               } ${
                 isOpen === false ? "translate-x-full" : ""
-              } fixed bottom-0 right-0 top-0 bg-green-600 p-16 pt-40 transition-transform sm:static sm:flex sm:grow sm:items-center sm:gap-8 sm:p-0`}
+              } fixed bottom-0 right-0 top-0 bg-green-600 p-16 pt-40 transition-transform motion-reduce:transition-none sm:static sm:flex sm:grow sm:items-center sm:gap-8 sm:p-0`}
             >
               <li>
                 <Link
