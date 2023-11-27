@@ -22,7 +22,7 @@ export default function RootLayout({
         className={`${livvic.className} flex min-h-screen flex-col font-semibold text-white`}
       >
         <Header />
-        <main>{children}</main>
+        <main className="flex grow flex-col">{children}</main>
         <Footer />
       </body>
     </html>
