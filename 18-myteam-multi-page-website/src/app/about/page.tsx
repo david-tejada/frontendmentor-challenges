@@ -46,7 +46,7 @@ export default function About() {
               linkedInUrl="#"
             >
               “Distributed teams required unique processes. You need to approach
-              work in a new way.” Cristian Duncan
+              work in a new way.”
             </PersonnelCard>
 
             <PersonnelCard
