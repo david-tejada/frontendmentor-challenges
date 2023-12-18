@@ -39,6 +39,8 @@ const config: Config = {
         600: "hsl(0deg, 78%, 63%)",
       },
       white: "hsl(0deg, 0%, 100%)",
+      black: "hsl(0deg, 0%, 0%)",
+      current: "currentColor",
     },
   },
   plugins: [],
