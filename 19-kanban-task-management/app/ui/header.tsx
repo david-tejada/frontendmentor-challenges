@@ -1,10 +1,12 @@
 "use client";
 
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import useDarkMode from "../lib/hooks/useDarkMode";
 import { IconBoard } from "./icons";
-import clsx from "clsx";
+import ThemeSwitcher from "./themeSwitcher";
 
 // I hard code this for the moment
 const boards = [
@@ -28,11 +30,11 @@ type HeaderProps = {
 
 export function Header({ boardId }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
-  console.log({ boardId });
+  useDarkMode();
 
   return (
     <header className="relative">
-      <div className="relative z-20 flex items-center gap-4 bg-white p-4">
+      <div className="relative z-20 flex items-center gap-4 bg-white p-4 dark:bg-neutral-700">
         <Image src="/logo-mobile.svg" width={24} height={25} alt="" />
         <button
           type="button"
@@ -114,6 +116,9 @@ export function Header({ boardId }: HeaderProps) {
                 </Link>
               </li>
             </ul>
+            <div className="p-4">
+              <ThemeSwitcher />
+            </div>
           </div>
         </div>
       )}
