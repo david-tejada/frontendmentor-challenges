@@ -1,3 +1,5 @@
+"use client";
+
 import { Switch } from "@headlessui/react";
 import Image from "next/image";
 import useDarkMode from "../lib/hooks/useDarkMode";
