@@ -8,7 +8,7 @@ export default function ThemeSwitcher() {
   const [darkMode, setDarkMode] = useDarkMode();
 
   return (
-    <div className="flex items-center justify-center gap-6 rounded-md bg-blue-100 p-[0.875rem]">
+    <div className="flex items-center justify-center gap-6 rounded-md bg-blue-100 p-[0.875rem] dark:bg-neutral-800">
       <Image src="/icon-light-theme.svg" width={18} height={18} alt="" />
       <Switch
         checked={darkMode}

@@ -28,7 +28,7 @@ export function Header({ boardId }: HeaderProps) {
         <Image src="/logo-mobile.svg" width={24} height={25} alt="" />
         <button
           type="button"
-          className="flex items-center text-heading-lg"
+          className="flex items-center text-heading-lg dark:text-white"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
@@ -70,8 +70,8 @@ export function Header({ boardId }: HeaderProps) {
               setIsOpen(false);
             }}
           ></div>
-          <div className="relative top-20 z-20 mx-auto w-3/4 rounded-lg bg-white">
-            <p className="px-6 py-4 text-heading-sm uppercase text-neutral-400">
+          <div className="relative top-20 z-20 mx-auto w-3/4 rounded-lg bg-white dark:bg-neutral-700">
+            <p className="px-6 py-4 text-heading-sm uppercase text-neutral-400 dark:text-neutral-400">
               All boards (3)
             </p>
             <ul>
