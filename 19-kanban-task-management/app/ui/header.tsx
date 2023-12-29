@@ -7,29 +7,19 @@ import { useState } from "react";
 import useDarkMode from "../lib/hooks/useDarkMode";
 import { IconBoard } from "./icons";
 import ThemeSwitcher from "./themeSwitcher";
-
-// I hard code this for the moment
-const boards = [
-  {
-    id: "gaq1yv3xc22e2wazicqo5tf0",
-    name: "Platform Launch",
-  },
-  {
-    id: "fffik6tuplydac9mv8lhc33f",
-    name: "Marketing Plan",
-  },
-  {
-    id: "jooywxs9mif75h4u4k9p2i9m",
-    name: "Roadmap",
-  },
-];
+import { useLocalStorage } from "../lib/hooks/useLocalStorage";
+import { placeholderBoards } from "../lib/placeholderBoards";
+import useActiveBoard from "../lib/hooks/useActiveBoard";
+import { redirect } from "next/navigation";
 
 type HeaderProps = {
   boardId: string;
 };
 
 export function Header({ boardId }: HeaderProps) {
+  const [boards, setBoards] = useLocalStorage("boards", placeholderBoards);
   const [isOpen, setIsOpen] = useState(false);
+  const board = useActiveBoard(boardId);
   useDarkMode();
 
   return (
@@ -43,7 +33,7 @@ export function Header({ boardId }: HeaderProps) {
             setIsOpen(!isOpen);
           }}
         >
-          Platform Launch
+          {board?.name}
           <Image
             src={isOpen ? "/icon-chevron-up.svg" : "/icon-chevron-down.svg"}
             width={10}
@@ -75,7 +65,7 @@ export function Header({ boardId }: HeaderProps) {
       {isOpen && (
         <div className="fixed inset-0 z-10">
           <div
-            className="bg-black fixed inset-0 opacity-50"
+            className="fixed inset-0 bg-black opacity-50"
             onClick={() => {
               setIsOpen(false);
             }}

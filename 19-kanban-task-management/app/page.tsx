@@ -1,12 +1,17 @@
-import { promises as fs } from "fs";
+"use client";
 
-export default async function Home() {
-  const file = await fs.readFile(process.cwd() + "/app/lib/data.json", "utf8");
-  const defaultBoards = JSON.parse(file);
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import useActiveBoard from "./lib/hooks/useActiveBoard";
+import { useLocalStorage } from "./lib/hooks/useLocalStorage";
+import { placeholderBoards } from "./lib/placeholderBoards";
 
-  return (
-    <main>
-      <p className="bg-red-500 p-4 text-body-lg">Hello world</p>
-    </main>
-  );
+export default function Home() {
+  const router = useRouter();
+  const [boards, setBoards] = useLocalStorage("boards", placeholderBoards);
+  const activeBoard = useActiveBoard();
+
+  useEffect(() => {
+    router.push(`board/${activeBoard?.id}`);
+  }, [router, activeBoard]);
 }
