@@ -11,7 +11,6 @@ import { useLocalStorage } from "../lib/hooks/useLocalStorage";
 import { placeholderBoards } from "../lib/placeholderBoards";
 import useActiveBoard from "../lib/hooks/useActiveBoard";
 import { redirect } from "next/navigation";
-import useMobileLayout from "../lib/hooks/useMobileLayout";
 import Logo from "./logo";
 import { useMenu } from "../lib/hooks/useMenu";
 

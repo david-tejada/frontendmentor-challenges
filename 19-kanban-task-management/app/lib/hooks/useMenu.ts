@@ -1,9 +1,9 @@
 import { useState } from "react";
-import useMobileLayout from "./useMobileLayout";
 import { useLocalStorage } from "./useLocalStorage";
+import useMediaQuery from "./useMediaQuery";
 
 export function useMenu() {
-  const isMobile = useMobileLayout();
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useLocalStorage(
     "sidebar-open",
